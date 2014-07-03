@@ -409,7 +409,7 @@ public class App {
 
 ---
 
-# [fit] **[Forms]実行結果**
+# [fit] **[iOS]実行結果**
 
 ![inline](image08c.png)
 
@@ -434,6 +434,12 @@ public class MyMapViewRenderer :
     SetNativeControl(new MonoTouch.MapKit.MKMapView());
 }}
 ```
+
+---
+
+# [fit] **[iOS,Android]実行結果**
+
+![inline](image08d.png)
 
 ---
 
