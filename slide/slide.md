@@ -619,7 +619,11 @@ public class MyPage : ContentPage {
 
 
 ---
+# [fit] **[iOS, Android]実行結果**
 
+![inline](image10a.png)
+
+---
 
 # [fit] **Messenger**
 
