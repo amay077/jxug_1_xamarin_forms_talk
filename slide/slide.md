@@ -541,6 +541,12 @@ public class App {
 ```
 
 ---
+# [fit] **[iOS, Android]実行結果**
+
+![inline](image08f.png)
+
+
+---
 
 # [fit] **3. MVVM な機能**
 # [fit]
