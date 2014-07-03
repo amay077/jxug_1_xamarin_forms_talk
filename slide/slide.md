@@ -456,10 +456,15 @@ public class MyPageRenderer : PageRenderer {
     base.OnElementChanged(e);
 
     NativeView.Add (new UILabel (new RectangleF(0, 100, 300, 40)) {
-        Text = "Render by MyPageRenderer"
+        Text = "UILabel from MyPageRenderer"
     });       
 }}
 ```
+
+---
+# [fit] **[iOS]実行結果**
+
+![inline](image08e.png)
 
 ---
 
