@@ -644,6 +644,11 @@ MessagingCenter.Send(sender, "messageId", "param");
 ``DisplayAlert`` などで使われているもよう。
 
 ---
+# [fit] **[iOS, Android]実行結果**
+
+![inline](image10b.png)
+
+---
 
 # [fit] **他の MVVM ライブラリと混ぜられる？**
 
