@@ -409,6 +409,12 @@ public class App {
 
 ---
 
+# [fit] **[Forms]実行結果**
+
+![inline](image08c.png)
+
+---
+
 # [fit] **まったく新しいViewをつくる(iOSでの例)**
 
 
