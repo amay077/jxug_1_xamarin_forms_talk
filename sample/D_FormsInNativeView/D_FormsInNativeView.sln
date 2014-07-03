@@ -69,6 +69,6 @@ Global
 		{5993CE79-A4D4-4655-B4FD-D620B28F8258}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Android\D_FormsInNativeView.Android.csproj
+		StartupItem = iOS\D_FormsInNativeView.iOS.csproj
 	EndGlobalSection
 EndGlobal

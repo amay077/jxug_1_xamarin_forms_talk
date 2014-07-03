@@ -292,6 +292,13 @@ partial class SecondViewController : UIViewController {
 ```
 
 ---
+
+# [fit] **[iOS]実行結果**
+
+![inline](image08a.png)
+
+
+---
 # [fit] **[Android]Activity の一部に Forms**
 
 ![inline](image09.png)
@@ -315,6 +322,12 @@ public class SecondActivity : AndroidActivity {
     this.SetPage(new NavigationPage(page));
 }}
 ```
+---
+
+# [fit] **[Android]実行結果**
+
+![inline](image08b.png)
+
 ---
 
 # [fit] Forms の部品を拡張する
