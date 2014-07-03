@@ -634,7 +634,8 @@ sender   : 大抵は ViewModel
 // メッセージ待ち受け側
 MessagingCenter.Subscribe<TSender, string>(
     receiver, "messageId", (sender, param) => 
-    label.Text = param; }; 
+  Toast.MakeText(this, param, ToastLength.Long).Show();
+}; 
 
 -------------------------------------------------------
 // メッセージ送信側
