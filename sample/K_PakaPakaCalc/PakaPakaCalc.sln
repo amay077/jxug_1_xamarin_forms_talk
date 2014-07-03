@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PakaPakaCalc", "PakaPakaCalc\PakaPakaCalc.csproj", "{BD939B55-1E3E-4E96-B6D4-BA633864F849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PakaPakaCalc.iOS", "iOS\PakaPakaCalc.iOS.csproj", "{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PakaPakaCalc.Android", "Android\PakaPakaCalc.Android.csproj", "{C4A985DA-FE67-4ADD-94A3-435315135AA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|iPhone.Build.0 = Release|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{BD939B55-1E3E-4E96-B6D4-BA633864F849}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|iPhone.Build.0 = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C4A985DA-FE67-4ADD-94A3-435315135AA2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|iPhone.Build.0 = Debug|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|iPhone.ActiveCfg = Release|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|iPhone.Build.0 = Release|iPhone
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{DB71DA7E-EC30-4AB4-A272-F9E8EDA809AA}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = iOS\PakaPakaCalc.iOS.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.AlignEmbeddedStatements = False
+		$2.IndentPreprocessorDirectives = False
+		$2.AnonymousMethodBraceStyle = NextLine
+		$2.PropertyBraceStyle = NextLine
+		$2.PropertyGetBraceStyle = NextLine
+		$2.PropertySetBraceStyle = NextLine
+		$2.EventBraceStyle = NextLine
+		$2.EventAddBraceStyle = NextLine
+		$2.EventRemoveBraceStyle = NextLine
+		$2.StatementBraceStyle = NextLine
+		$2.ElseNewLinePlacement = NewLine
+		$2.CatchNewLinePlacement = NewLine
+		$2.FinallyNewLinePlacement = NewLine
+		$2.WhileNewLinePlacement = DoNotCare
+		$2.ArrayInitializerWrapping = DoNotChange
+		$2.ArrayInitializerBraceStyle = NextLine
+		$2.BeforeMethodDeclarationParentheses = False
+		$2.BeforeMethodCallParentheses = False
+		$2.BeforeConstructorDeclarationParentheses = False
+		$2.NewLineBeforeConstructorInitializerColon = NewLine
+		$2.NewLineAfterConstructorInitializerColon = SameLine
+		$2.BeforeDelegateDeclarationParentheses = False
+		$2.NewParentheses = False
+		$2.SpacesBeforeBrackets = False
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal
