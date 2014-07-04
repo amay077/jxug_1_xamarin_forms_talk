@@ -96,7 +96,7 @@
 
 ---
 
-# [fit] **画面の定義**
+# [fit] **画面の定義(C#)**
 
 ```csharp
 public class App {
@@ -110,7 +110,32 @@ public class App {
   }
 }
 ```
+---
+# [fit] **画面の定義(XAML)**
 
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="A2_Xaml.MainPage">
+    <ContentPage.Content>
+        <Label Text="Hello Xaml"
+          VerticalOptions="Center"
+          HorizontalOptions="Center" />
+    </ContentPage.Content>
+</ContentPage>
+```
+
+---
+#[fit] **おことわり**
+---
+#[fit] **XAML,もう出てきません**
+---
+#[fit] **Windows Phone,**
+#[fit] 
+#[fit] **説明しません**
+## 端末をくだ(ry
 ---
 # [fit] **エントリポイント（iOS）**
 

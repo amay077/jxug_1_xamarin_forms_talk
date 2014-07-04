@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="A2_Xaml.MainPage">
+    <ContentPage.Content>
+    	<StackLayout Orientation="Vertical"
+	        VerticalOptions="Center"
+	        HorizontalOptions="Fill">
+        	<Label x:Name="labelName"
+	        	HorizontalOptions="Center"
+	        	Text="Hello Xaml"
+	        	Font="Large"/>
+	    	<Button x:Name = "buttonExecute"
+	        	HorizontalOptions="Center"
+	    		Text = "Execute"
+	    		Font="Large"/>
+  		</StackLayout>
+  	</ContentPage.Content>
+</ContentPage>
+
