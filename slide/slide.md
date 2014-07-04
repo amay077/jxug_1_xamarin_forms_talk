@@ -357,7 +357,7 @@ public class SecondActivity : AndroidActivity {
 
 # [fit] Forms の部品を拡張する
 # [fit] 
-# [fit] Forms.ButtonにLongTapイベントを追加する
+# [fit] 例:Forms.ButtonにLongTapイベントを追加する
 
 ---
 
@@ -376,7 +376,7 @@ public class MyButton : Xamarin.Forms.Button {
 ```
 
 ---
-# [fit] **[Android]Renderer を実装して Export する**
+# [fit] **[Android]ButtonRenderer を拡張する**
 
 ```csharp
 // ↓↓ 超重要！ ↓↓
@@ -394,7 +394,7 @@ public class MyButtonRenderer : ButtonRenderer {
 ```
 
 ---
-# [fit] **[iOS]Renderer を実装して Export する**
+# [fit] **[iOS]ButtonRenderer を拡張する**
 
 ```csharp
 // ↓↓ 超重要！ ↓↓
@@ -419,16 +419,12 @@ public class MyButtonRenderer : ButtonRenderer {
 ```csharp
 public class App {
   public static Page GetMainPage() {
-    var button = new MyButton {
-      Text = "Long tap me"
-    };
+    var button = new MyButton { Text = "Long tap me" };
 
     button.LongTap += (sender, e) => 
       button.Text = "On long tapped";
 
-    return new ContentPage { 
-      Content = button
-    };
+    return new ContentPage { Content = button };
 }}
 ```
 
@@ -456,7 +452,7 @@ public class MyMapView : Xamarin.Forms.View
 
 ---
 
-# [fit] **[iOS]Renderer を実装して Export する**
+# [fit] **[iOS]ViewRenderer を拡張する**
 
 ```csharp
 //iOS:MyMapViewRenderer.cs
@@ -493,7 +489,7 @@ public class MyPageRenderer : PageRenderer {
       VisualElementChangedEventArgs e) {
     base.OnElementChanged(e);
 
-    NativeView.Add (new UILabel (new RectangleF(0, 100, 300, 40)) {
+    NativeView.Add (new UILabel(new RectangleF(0, 100, 300, 40)) {
         Text = "UILabel from MyPageRenderer"
     });       
 }}
@@ -534,23 +530,38 @@ public interface IDeviceInfo {
 
 ---
 
-# [fit] **[iOS/Andrid]プラットフォーム側の実装**
+# [fit] **[iOS]プラットフォーム側の実装**
 
 ```csharp
 // DeviceInfo_iOS.cs
-[assembly: Xamarin.Forms.Dependency (typeof (DeviceInfo_iOS))] // これ重要！
+
+// これ重要！
+[assembly: Xamarin.Forms.Dependency(typeof(DeviceInfo_iOS))] 
 public class DeviceInfo_iOS : IDeviceInfo {
+
   public string DeviceName {
-    get { return UIDevice.CurrentDevice.Name; } // iOSの実装
+    get { 
+      return UIDevice.CurrentDevice.Name; // iOSの実装
+    } 
   }
 }
+```
 
-------------------------------------------------------------------
+---
+
+# [fit] **[Andrid]プラットフォーム側の実装**
+
+```csharp
 // DeviceInfo_Android.cs
-[assembly: Xamarin.Forms.Dependency (typeof (DeviceInfo_Android))]
+
+// これ重要！
+[assembly: Xamarin.Forms.Dependency(typeof(DeviceInfo_Android))]
 public class DeviceInfo_Android : IDeviceInfo {
+
   public string DeviceName {
-    get { return Android.OS.Build.Device; } // Android の実装
+    get { 
+      return Android.OS.Build.Device; // Android の実装
+    } 
   }
 }
 ```
@@ -562,16 +573,15 @@ public class DeviceInfo_Android : IDeviceInfo {
 ```csharp
 public class App {
   public static Page GetMainPage() {
-    var button = new Button { Text = "Get device name" };
+    var label = new Label { Text = "Get device name" };
 
     // 実行しているプラットフォームの DeviceInfo を生成
     // 対応してない時は null
     var info = DependencyService.Get<IDeviceInfo>();
+    if (info != null)
+      label.Text = info.DeviceName;
 
-    button.LongTap += (sender, e) => 
-      button.Text = info != null ? info.DeviceName : String.Empty;
-
-    return new ContentPage { Content = button };
+    return new ContentPage { Content = label };
 }}
 ```
 
@@ -758,52 +768,10 @@ MessagingCenter.Send(sender, "messageId", "param");
 
 ---
 
-# [fit] **Tips じゃない Tips**
+# [fit] **おまけ：Tips じゃない Tips**
 
 * NuGet から頻繁に更新を（今の最新は 1.1.1.6206、プロジェクト作成直後は古い）
 * 画面サイズから文字サイズをスケーリング(手動)
 * iOSのステータスバーの為の ``Device.OnPlatform(20,0,0)`` …ひどい
 * [Xamarin.Formsでキーボードに隠れないようにレイアウトをずらすハック](http://qiita.com/wilfrem/items/af5cc21f08dc4a4e4249) by @WilfremLuminous さん
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
