@@ -414,14 +414,26 @@ public class App {
 ![inline](image08c.png)
 
 ---
+# [fit] **まったく新しいViewをつくる**
 
-# [fit] **まったく新しいViewをつくる(iOSでの例)**
+---
+
+# [fit] **[Forms]``View``を拡張した``MyMapView``を用意**
 
 
 ```csharp
 // Forms:MyMapView.cs
-public class MyMapView : Xamarin.Forms.View { }
------------------------------------------------------------------------
+public class MyMapView : Xamarin.Forms.View 
+{ 
+
+}
+```
+
+---
+
+# [fit] **[iOS]Renderer を実装して Export する**
+
+```csharp
 //iOS:MyMapViewRenderer.cs
 [assembly:ExportRenderer(typeof(MyMapView), typeof(MyMapViewRenderer))]
 
@@ -430,6 +442,7 @@ public class MyMapViewRenderer :
   protected override void OnElementChanged (
       ElementChangedEventArgs<MyMapView> e) {
     base.OnElementChanged(e);
+
     // 独自のコントロールに置き換えちゃう
     SetNativeControl(new MonoTouch.MapKit.MKMapView());
 }}
@@ -480,20 +493,17 @@ public class MyPageRenderer : PageRenderer {
 
 # [fit] 画面以外のプラットフォーム固有機能を使う
 # [fit] 
-# 「端末の名称」を取得する
+## 例：「端末の名称」を取得する
 
 ---
 
 # [fit] **[Forms]**共通のインターフェースを定義する
 
-* いわゆる「DI」の機能
-* プラットフォームに応じたインスタンスを``DependencyService``が返してくれる
-
-まずはインターフェース。
-
 ```csharp
 public interface IDeviceInfo {
+
   string DeviceName { get; }
+
 }
 ```
 
