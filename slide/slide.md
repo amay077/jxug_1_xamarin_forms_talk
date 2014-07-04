@@ -130,11 +130,11 @@ public class App {
 ---
 #[fit] **おことわり**
 ---
-#[fit] **XAML,もう出てきません**
+#[fit] **XAMLの説明はこれで終わりです**
 ---
 #[fit] **Windows Phone,**
 #[fit] 
-#[fit] **説明しません**
+#[fit] **説明できません**
 ## 端末をくだ(ry
 ---
 # [fit] **エントリポイント（iOS）**
@@ -278,7 +278,7 @@ Device.Idiom = { Phone | Tablet }
 
 * いきなり Forms に移行するとかムリ
   * 例: .axml/.storyboard アプリの一部に Forms を使う
-* Forms の部品に足りない機能がある
+* Forms に足りない機能がある
   * 既存のViewの拡張(例:ButtonにLongTapイベントを付ける)
   * まったく新しいViewを作る
 * 画面以外の機能を使いたい(GPSとか)
@@ -303,15 +303,14 @@ partial class SecondViewController : UIViewController {
   public override void ViewDidLoad() {
       base.ViewDidLoad();
       Forms.Init(); // 初期化
-      // Page→ViewController
-      var page = new MainPage();
-      var vc = page.CreateViewController();
+
       // Page 側のボタンのイベントハンドラ(画面遷移)
-      page.GotoThirdButton.Clicked += (sender, e) => 
-        this.PerformSegue("goto_third", this);
-      // Pageを親ViewControllerに追加
-      this.AddChildViewController(vc);
-      this.View.Add(vc.View);
+      var page = new MainPage();
+      page.GotoThirdButton.Clicked += (s, e) => PerformSegue("goto_third", this);
+
+      var vc = page.CreateViewController();
+      AddChildViewController(vc);
+      View.Add(vc.View);
       vc.DidMoveToParentViewController(this);
   }}
 ```
@@ -670,10 +669,7 @@ public class MyPage : ContentPage {
 
 ---
 
-# [fit] **Messenger**
-
-receiver : 大抵は View
-sender   : 大抵は ViewModel
+# [fit] **Messenger（MessagingCenter）**
 
 ```csharp
 // メッセージ待ち受け側
@@ -763,8 +759,10 @@ MessagingCenter.Send(sender, "messageId", "param");
 
 # [fit] ありがとうございました
 # [fit]
-### この資料は Markdown + [Deskset](http://www.decksetapp.com/) で作成しました
-### 資料およびサンプルは [github.com/amay077/jxug_1_xamarin_forms_talk](https://github.com/amay077/jxug_1_xamarin_forms_talk)
+# [fit]
+# [fit]
+#### この資料は Markdown + [Deskset](http://www.decksetapp.com/) で作成しました
+#### 資料およびサンプルは [github.com/amay077/jxug\_1\_xamarin\_forms\_talk](https://github.com/amay077/jxug_1_xamarin_forms_talk)
 
 ---
 
