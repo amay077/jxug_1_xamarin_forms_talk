@@ -752,6 +752,9 @@ MessagingCenter.Send(sender, "messageId", "param");
 ---
 
 # [fit] ありがとうございました
+# [fit]
+### この資料は Markdown + [Deskset](http://www.decksetapp.com/) で作成しました
+### 資料およびサンプルは [github.com/amay077/jxug_1_xamarin_forms_talk](https://github.com/amay077/jxug_1_xamarin_forms_talk)
 
 ---
 
