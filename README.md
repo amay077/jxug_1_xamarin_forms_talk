@@ -4,7 +4,7 @@
 
 ## 資料
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/36654366" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/amay077/xamarinforms" title="Xamarin.Forms概要" target="_blank">Xamarin.Forms概要</a> </strong> from <strong><a href="http://www.slideshare.net/amay077" target="_blank">amay 077</a></strong> </div>
+[![slide](slide.png)](https://www.slideshare.net/amay077/xamarinforms)
 
 * [pdf](slide/slide.pdf)
 * [source](slide/slide.md)
