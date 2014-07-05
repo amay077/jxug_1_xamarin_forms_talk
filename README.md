@@ -8,6 +8,7 @@
 
 * [pdf](slide/slide.pdf)
 * [source](slide/slide.md)
+* [samples](sample)
 
 ## Links
 
