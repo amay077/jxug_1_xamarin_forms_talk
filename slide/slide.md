@@ -8,7 +8,7 @@
 
 # [fit] **自己紹介**
 
-* ![inline, 20%](myprof.png) 奥山 裕紳（OKUYAMA Hironobu）
+* ![inline, 20%](myprof.png) 奥山 裕紳（OKUYAMA Hironobu） - @amay077
 * 位置情報エンジニア、モバイルアプリエンジニア
 * VB6 → VC6 → C#2.0 → (闇) → Java/Obj-C → C#5.0
 * Cosmoroot,Inc(Nagoya, Tokyo)
