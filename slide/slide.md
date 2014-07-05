@@ -8,7 +8,7 @@
 
 # [fit] **自己紹介**
 
-* ![inline, 20%](myprof.png) 奥山 裕紳（OKUYAMA Hironobu）
+* ![inline, 20%](myprof.png) 奥山 裕紳（OKUYAMA Hironobu） - @amay077
 * 位置情報エンジニア、モバイルアプリエンジニア
 * VB6 → VC6 → C#2.0 → (闇) → Java/Obj-C → C#5.0
 * Cosmoroot,Inc(Nagoya, Tokyo)
@@ -130,11 +130,11 @@ public class App {
 ---
 #[fit] **おことわり**
 ---
-#[fit] **XAML,もう出てきません**
+#[fit] **XAMLの説明はこれで終わりです**
 ---
 #[fit] **Windows Phone,**
 #[fit] 
-#[fit] **説明しません**
+#[fit] **説明できません**
 ## 端末をくだ(ry
 ---
 # [fit] **エントリポイント（iOS）**
@@ -278,7 +278,7 @@ Device.Idiom = { Phone | Tablet }
 
 * いきなり Forms に移行するとかムリ
   * 例: .axml/.storyboard アプリの一部に Forms を使う
-* Forms の部品に足りない機能がある
+* Forms に足りない機能がある
   * 既存のViewの拡張(例:ButtonにLongTapイベントを付ける)
   * まったく新しいViewを作る
 * 画面以外の機能を使いたい(GPSとか)
@@ -303,15 +303,14 @@ partial class SecondViewController : UIViewController {
   public override void ViewDidLoad() {
       base.ViewDidLoad();
       Forms.Init(); // 初期化
-      // Page→ViewController
-      var page = new MainPage();
-      var vc = page.CreateViewController();
+
       // Page 側のボタンのイベントハンドラ(画面遷移)
-      page.GotoThirdButton.Clicked += (sender, e) => 
-        this.PerformSegue("goto_third", this);
-      // Pageを親ViewControllerに追加
-      this.AddChildViewController(vc);
-      this.View.Add(vc.View);
+      var page = new MainPage();
+      page.GotoThirdButton.Clicked += (s, e) => PerformSegue("goto_third", this);
+
+      var vc = page.CreateViewController();
+      AddChildViewController(vc);
+      View.Add(vc.View);
       vc.DidMoveToParentViewController(this);
   }}
 ```
@@ -357,7 +356,7 @@ public class SecondActivity : AndroidActivity {
 
 # [fit] Forms の部品を拡張する
 # [fit] 
-# [fit] Forms.ButtonにLongTapイベントを追加する
+# [fit] 例:Forms.ButtonにLongTapイベントを追加する
 
 ---
 
@@ -376,7 +375,7 @@ public class MyButton : Xamarin.Forms.Button {
 ```
 
 ---
-# [fit] **[Android]Renderer を実装して Export する**
+# [fit] **[Android]ButtonRenderer を拡張する**
 
 ```csharp
 // ↓↓ 超重要！ ↓↓
@@ -394,7 +393,7 @@ public class MyButtonRenderer : ButtonRenderer {
 ```
 
 ---
-# [fit] **[iOS]Renderer を実装して Export する**
+# [fit] **[iOS]ButtonRenderer を拡張する**
 
 ```csharp
 // ↓↓ 超重要！ ↓↓
@@ -419,16 +418,12 @@ public class MyButtonRenderer : ButtonRenderer {
 ```csharp
 public class App {
   public static Page GetMainPage() {
-    var button = new MyButton {
-      Text = "Long tap me"
-    };
+    var button = new MyButton { Text = "Long tap me" };
 
     button.LongTap += (sender, e) => 
       button.Text = "On long tapped";
 
-    return new ContentPage { 
-      Content = button
-    };
+    return new ContentPage { Content = button };
 }}
 ```
 
@@ -456,7 +451,7 @@ public class MyMapView : Xamarin.Forms.View
 
 ---
 
-# [fit] **[iOS]Renderer を実装して Export する**
+# [fit] **[iOS]ViewRenderer を拡張する**
 
 ```csharp
 //iOS:MyMapViewRenderer.cs
@@ -493,7 +488,7 @@ public class MyPageRenderer : PageRenderer {
       VisualElementChangedEventArgs e) {
     base.OnElementChanged(e);
 
-    NativeView.Add (new UILabel (new RectangleF(0, 100, 300, 40)) {
+    NativeView.Add (new UILabel(new RectangleF(0, 100, 300, 40)) {
         Text = "UILabel from MyPageRenderer"
     });       
 }}
@@ -534,23 +529,38 @@ public interface IDeviceInfo {
 
 ---
 
-# [fit] **[iOS/Andrid]プラットフォーム側の実装**
+# [fit] **[iOS]プラットフォーム側の実装**
 
 ```csharp
 // DeviceInfo_iOS.cs
-[assembly: Xamarin.Forms.Dependency (typeof (DeviceInfo_iOS))] // これ重要！
+
+// これ重要！
+[assembly: Xamarin.Forms.Dependency(typeof(DeviceInfo_iOS))] 
 public class DeviceInfo_iOS : IDeviceInfo {
+
   public string DeviceName {
-    get { return UIDevice.CurrentDevice.Name; } // iOSの実装
+    get { 
+      return UIDevice.CurrentDevice.Name; // iOSの実装
+    } 
   }
 }
+```
 
-------------------------------------------------------------------
+---
+
+# [fit] **[Andrid]プラットフォーム側の実装**
+
+```csharp
 // DeviceInfo_Android.cs
-[assembly: Xamarin.Forms.Dependency (typeof (DeviceInfo_Android))]
+
+// これ重要！
+[assembly: Xamarin.Forms.Dependency(typeof(DeviceInfo_Android))]
 public class DeviceInfo_Android : IDeviceInfo {
+
   public string DeviceName {
-    get { return Android.OS.Build.Device; } // Android の実装
+    get { 
+      return Android.OS.Build.Device; // Android の実装
+    } 
   }
 }
 ```
@@ -562,16 +572,15 @@ public class DeviceInfo_Android : IDeviceInfo {
 ```csharp
 public class App {
   public static Page GetMainPage() {
-    var button = new Button { Text = "Get device name" };
+    var label = new Label { Text = "Get device name" };
 
     // 実行しているプラットフォームの DeviceInfo を生成
     // 対応してない時は null
     var info = DependencyService.Get<IDeviceInfo>();
+    if (info != null)
+      label.Text = info.DeviceName;
 
-    button.LongTap += (sender, e) => 
-      button.Text = info != null ? info.DeviceName : String.Empty;
-
-    return new ContentPage { Content = button };
+    return new ContentPage { Content = label };
 }}
 ```
 
@@ -660,10 +669,7 @@ public class MyPage : ContentPage {
 
 ---
 
-# [fit] **Messenger**
-
-receiver : 大抵は View
-sender   : 大抵は ViewModel
+# [fit] **Messenger（MessagingCenter）**
 
 ```csharp
 // メッセージ待ち受け側
@@ -753,57 +759,17 @@ MessagingCenter.Send(sender, "messageId", "param");
 
 # [fit] ありがとうございました
 # [fit]
-### この資料は Markdown + [Deskset](http://www.decksetapp.com/) で作成しました
-### 資料およびサンプルは [github.com/amay077/jxug_1_xamarin_forms_talk](https://github.com/amay077/jxug_1_xamarin_forms_talk)
+# [fit]
+# [fit]
+#### この資料は Markdown + [Deskset](http://www.decksetapp.com/) で作成しました
+#### 資料およびサンプルは [github.com/amay077/jxug\_1\_xamarin\_forms\_talk](https://github.com/amay077/jxug_1_xamarin_forms_talk)
 
 ---
 
-# [fit] **Tips じゃない Tips**
+# [fit] **おまけ：Tips じゃない Tips**
 
 * NuGet から頻繁に更新を（今の最新は 1.1.1.6206、プロジェクト作成直後は古い）
 * 画面サイズから文字サイズをスケーリング(手動)
 * iOSのステータスバーの為の ``Device.OnPlatform(20,0,0)`` …ひどい
 * [Xamarin.Formsでキーボードに隠れないようにレイアウトをずらすハック](http://qiita.com/wilfrem/items/af5cc21f08dc4a4e4249) by @WilfremLuminous さん
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
